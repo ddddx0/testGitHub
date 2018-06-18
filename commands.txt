@@ -2,10 +2,15 @@ github命令
 
 git pull 更新本地库
 
+git checkout -b <branch> 创建一个叫做branch的分支，并切换过去
+git checkout <branch> 切换到<branch>分支
 git merge <branch> 把<branch>合并带当前分支
+git branch -d <branch> 删除<branch>
+ 
+--文件储存流程
+工作目录==>暂存区==>HEAD(指向最后一次改动)==>远程仓库
+--文件从本地到github远程仓库
+git add <filename> 把<filename>从工作目录添加到缓存区
+git commit -m "备注" 把所有变动提交从缓存区提交到HEAD中，并加备注
+git push origin <branch> 把<branch>分支的变动提交到远程仓库
 
-git add <filename> 把<filename>添加到github跟踪中
-
-git commit -m "备注" 提交变动到当前分支，并备注
-
-git 
