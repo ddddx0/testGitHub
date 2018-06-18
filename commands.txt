@@ -1,3 +1,11 @@
 github命令
 
 git pull 更新本地库
+
+git merge <branch> 把<branch>合并带当前分支
+
+git add <filename> 把<filename>添加到github跟踪中
+
+git commit -m "备注" 提交变动到当前分支，并备注
+
+git 
