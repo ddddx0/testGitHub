@@ -1,7 +1,7 @@
 github命令
 
 ---创建本地库相关
-ssh -keygen -t rsa -C "your_email@youremail.com" :在本地生成ssh码,默认地址/User/lenovo(用户名)/.ssh/id_rsa.pub,(your_email@youremail.com为github上注册的邮箱),然后在github账号里的SSH keys中添加SSH key
+ssh-keygen -t rsa -C "your_email@youremail.com" :在本地生成ssh码,默认地址/User/lenovo(用户名)/.ssh/id_rsa.pub,(your_email@youremail.com为github上注册的邮箱),然后在github账号里的SSH keys中添加SSH key
 ssh -T git@github.com :验证ssh key是否添加成功
 git config --global user.name "your name" :设置username,任意填
 git config --global user.email "your_email@youremail.com" :设置email，为注册邮箱
