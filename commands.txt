@@ -8,6 +8,14 @@ git config --global user.email "your_email@youremail.com" :设置email，为注�
 git clone <path> :创建一个远程仓库的本地克隆版本,<path>的形式{/path/to/repository||username@host:/path/to/repository||https://github.com/xx/xxx.git}
 git remote add origin git@github.com:yourName/yourRepo.git :上传本地仓库,后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库
 
+---文件状态相关
+                     add                       commit                    push
+本地文件（git不监控）======>缓存区（git监控状态）========>本地仓库记录[HEAD]=======>远程仓库
+                    <==========================================================
+                                             clone
+git status :查看git文件夹下的文件状态
+git diff : 查看没有add进缓存区的修改
+git diff --cached : 查看add进缓存区但是并未commit的变动
 
 ---分支(branch)相关
 git checkout -b <branch> :创建一个叫做branch的分支，并切换过去
