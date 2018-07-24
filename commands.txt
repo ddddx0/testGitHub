@@ -1,6 +1,6 @@
 github命令
 
----创建本地库相关
+-------创建本地库相关
 ssh-keygen -t rsa -C "your_email@youremail.com" :在本地生成ssh码,默认地址/User/lenovo(用户名)/.ssh/id_rsa.pub,(your_email@youremail.com为github上注册的邮箱),然后在github账号里的SSH keys中添加SSH key
 ssh -T git@github.com :验证ssh key是否添加成功
 git config --global user.name "your name" :设置username,任意填
@@ -8,7 +8,8 @@ git config --global user.email "your_email@youremail.com" :设置email，为注�
 git clone <path> :创建一个远程仓库的本地克隆版本,<path>的形式{/path/to/repository||username@host:/path/to/repository||https://github.com/xx/xxx.git}
 git remote add origin git@github.com:yourName/yourRepo.git :上传本地仓库,后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库
 
----文件状态相关
+
+-------文件状态相关
                      add                       commit                    push
 本地文件（git不监控）======>缓存区（git监控状态）========>本地仓库记录[HEAD]=======>远程仓库
                     <==========================================================
@@ -16,16 +17,24 @@ git remote add origin git@github.com:yourName/yourRepo.git :上传本地仓库,�
 git status :查看git文件夹下的文件状态
 git diff : 查看没有add进缓存区的修改
 git diff --cached : 查看add进缓存区但是并未commit的变动
+git commit
+    -a : 跳过add阶段，把所有在监控状态下的变动一起放入本地仓库记录中
+    -m "<备注>": 添加备注，把<备注>替换为具体备注 
+git rm
+    -f : 强制从缓存区中删除文件，同时删除本地文件
+    --cached : 把文件移出git监控，即本地文件还存在
+git mv : 移动文件或重命名    
 
----分支(branch)相关
+
+-------分支(branch)相关
 git checkout -b <branch> :创建一个叫做branch的分支，并切换过去
 git checkout <branch> :切换到<branch>分支
 git merge <branch> :把<branch>合并带当前分支
-git diff <source_branch> <target_branch> :查看<source_branch> <target_branch>的·差异
+git diff <source_branch> <target_branch> :查看<source_branch> <target_branch>的差异
 git branch -d <branch> :删除<branch>
 
 
----工作流相关
+-------工作流相关
 --文件储存流程
 工作目录==>暂存区==>HEAD(指向最后一次改动)==>远程仓库
 git pull :从远程仓库更新当前分支的本地库 
